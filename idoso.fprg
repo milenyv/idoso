@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="fluxograma_desconto_idoso"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-26 05:00:37 "/>
+        <attribute name="created" value="bXVyaWxvLnZhZ29saXZlaXJhO1NBTjA2NzQ0MDZXMTEtMTsyMDI1LTA4LTI2OyIwNDoyODoyNiAiOzM5NTc="/>
+        <attribute name="edited" value="bXVyaWxvLnZhZ29saXZlaXJhO1NBTjA2NzQ0MDZXMTEtMTsyMDI1LTA4LTI2OyIwNTowMDozNyAiOzI7NDA1OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Nome" type="String" array="False" size=""/>
+            <declare name="Idade" type="Integer" array="False" size=""/>
+            <declare name="ValorPagar, ValorCompra" type="Real" array="False" size=""/>
+            <output expression="&quot;Qual seu nome?&quot;" newline="True"/>
+            <input variable="Nome"/>
+            <output expression="&quot;Quantos anos voce tem?&quot;" newline="True"/>
+            <input variable="Idade"/>
+            <output expression="&quot;Qual o valor da compra?&quot;" newline="True"/>
+            <input variable="ValorCompra"/>
+            <if expression="Idade &gt;= 65 and ValorCompra &gt;= 1000">
+                <then>
+                    <assign variable="ValorPagar" expression="ValorCompra - (ValorCompra * 0.10)"/>
+                </then>
+                <else>
+                    <assign variable="ValorPagar" expression="ValorCompra"/>
+                </else>
+            </if>
+            <output expression="&quot;Nome: &quot; &amp; Nome" newline="True"/>
+            <output expression="&quot;Idade: &quot; &amp; Idade" newline="True"/>
+            <output expression="&quot;Valor da compra: R$&quot; &amp; ValorCompra" newline="True"/>
+            <output expression="&quot;Valor a pagar: R$&quot; &amp; ValorPagar" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
